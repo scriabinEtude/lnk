@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 //테이블로 매핑하지 않고, 자식 클래스(BoardENtity)에게 매핑정보를 상속하기 위한 어노테이션
 @MappedSuperclass
-//JPA에게 해당 Entity는 Auditing기능을 사용한다는 것을 알리는 어노테이션입
+//JPA에게 해당 Entity는 Auditing기능을 사용한다는 것을 알리는 어노테이션
 @EntityListeners(AuditingEntityListener.class)
 public abstract class TimeEntity    {
     /* Entity가 처음 저장될때 생성일을 주입하는 어노테이션

@@ -35,7 +35,7 @@ public class BoardController {
     }
 
     @GetMapping("/post/{no}")
-    public String detail(@PathVariable("no") Long no, Model model) {
+    public String view(@PathVariable("no") Long no, Model model) {
         BoardDto boardDTO = boardService.getPost(no);
         model.addAttribute("boardDto", boardDTO);
         return "thymeleaf/board/view";
