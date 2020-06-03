@@ -1,3 +1,3 @@
 #Lim and Kim toyProject
 
-Principal : We do What we want.
+Principal : We do what we want.
