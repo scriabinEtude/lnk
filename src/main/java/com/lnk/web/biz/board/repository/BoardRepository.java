@@ -1,6 +1,6 @@
-package com.lnk.web.board.repository;
+package com.lnk.web.biz.board.repository;
 
-import com.lnk.web.board.entity.BoardEntity;
+import com.lnk.web.biz.board.entity.BoardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

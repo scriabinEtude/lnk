@@ -1,4 +1,4 @@
-package com.lnk.web.board.entity;
+package com.lnk.web.biz.board.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -27,11 +27,15 @@ public class BoardEntity extends TimeEntity{
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
+    @Column(columnDefinition = "TEXT")
+    private String filePath;
+
     @Builder
-    public BoardEntity(Long id, String title, String content, String writer) {
+    public BoardEntity(Long id, String title, String content, String writer, String filePath) {
         this.id = id;
         this.writer = writer;
         this.title = title;
         this.content = content;
+        this.filePath = filePath;
     }
 }

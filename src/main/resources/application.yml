@@ -35,3 +35,15 @@ spring:
         format_sql: true
   #디버깅이 용이하도록 SQL문 이외에 추가적인 정보를 출력
         use_sql_comments: true
+
+cloud:
+  aws:
+    credentials:
+      accessKey: AKIAINLGFVU5FME4GQNA
+      secretKey: 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
+    s3:
+      bucket: lnks3
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false

@@ -1,12 +1,17 @@
-package com.lnk.web.board.controller;
+package com.lnk.web.biz.board.controller;
 
-import com.lnk.web.board.dto.BoardDto;
-import com.lnk.web.board.service.BoardService;
+import com.lnk.web.biz.board.dto.BoardDto;
+import com.lnk.web.biz.board.service.BoardService;
+import com.lnk.web.cmm.config.S3Config;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -14,6 +19,8 @@ import java.util.List;
    예를 들어 Service객체를 주입 받을 때 @Autowired 같은 어노테이션을 부여하지 않아도 됨 */
 @AllArgsConstructor
 public class BoardController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+    private S3Config s3Service;
     private BoardService boardService;
 
     @GetMapping("/list")
@@ -32,7 +39,10 @@ public class BoardController {
     }
 
     @PostMapping("/write")
-    public String write(BoardDto boarddto){
+    public String write(BoardDto boarddto, MultipartFile file)throws IOException {
+        String imgPath = s3Service.upload(file);
+        boarddto.setFilePath(imgPath);
+        logger.info("imgPath:"+imgPath);
         boardService.savePost(boarddto);
         return "redirect:/list";
     }

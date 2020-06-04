@@ -30,7 +30,11 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     compile('org.springframework.boot:spring-boot-devtools')
+    // AWS S3
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-aws', version: '2.2.1.RELEASE', ext: 'pom'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.795'
 }
+
 
 test {
     useJUnitPlatform()

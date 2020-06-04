@@ -1,8 +1,8 @@
-package com.lnk.web.board.service;
+package com.lnk.web.biz.board.service;
 
-import com.lnk.web.board.dto.BoardDto;
-import com.lnk.web.board.entity.BoardEntity;
-import com.lnk.web.board.repository.BoardRepository;
+import com.lnk.web.biz.board.dto.BoardDto;
+import com.lnk.web.biz.board.entity.BoardEntity;
+import com.lnk.web.biz.board.repository.BoardRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
