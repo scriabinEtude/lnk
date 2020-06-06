@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<hr>
+<p>
+    <span sec:authentication="name"></span>님 환영합니다
+</p>
+<a th:href="@{'/list'}">board</a><br/>
+<a th:href="@{'/search'}">search</a>
+</body>
+</html>
