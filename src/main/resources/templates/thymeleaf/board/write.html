@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form th:action="@{/write}" method="post" enctype="multipart/form-data">
+        제목 : <input type="text" name="title"> <br>
+        작성자 : <input type="text" name="writer"> <br>
+        파일 : <input type="file" name="file"> <br>
+        <textarea name="content"></textarea><br>
+
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>
